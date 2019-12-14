@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { AddGameModelInterface } from '../../interfaces/AddGameModelInterface';
+import React from 'react';
+import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents'
+import { AddGameModelInterface} from '../../interfaces/AddGameModelInterface';
 
 const AddGameModel: React.FC<AddGameModelInterface> = props => {
-
+  const {
+    isOpen,
+    toggle
+  } = props
+  
   return (
-    <Modal>
-
-    </Modal>
+    <MainModal isOpen={isOpen} toggle={() => toggle()}>
+      <Header>
+        Add Your Playstation Game Here
+      </Header>
+      <Body>
+sfasfs
+      </Body>
+      <Footer>
+          <Button backgroundColor={'white'} color={'black'}> 
+            Save
+          </Button>
+          <Button onClick={toggle}>
+            Cancel
+          </Button>
+      </Footer>
+    </MainModal>
   )
 }
 
