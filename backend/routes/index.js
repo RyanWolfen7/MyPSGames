@@ -1,6 +1,5 @@
-const routes = {
-};
+const usersGames = require('./usersGames.js/index.js');
 
-module.exports = app => Object.keys(routes).forEach(route => {
-  app.use(`/api/${route}`, routes[route]);
-});
+module.exports = function(app, db){
+  usersGames(app, db);
+};

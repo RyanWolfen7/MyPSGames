@@ -1,11 +1,20 @@
-const express = require('express');
-const app = express();
+const express     = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser  = require('body-parser');
+const db          = require('./config/db');
 
-require('dotenv').config({
-  path: '.env.example'
-});
+const app   = express();
+const port  = 8000;
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+var cors = require('cors');
+app.use(cors())
+
+MongoClient.connect(db.url, (err, database) => {
+  if (err) return console.log(err)
+  require('./routes')(app, database);
+
+  app.listen(port, () => {
+    console.log('We all live on port ' + port);
+  });
+})
