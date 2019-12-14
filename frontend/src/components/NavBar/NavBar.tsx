@@ -1,10 +1,11 @@
-import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import React, { useState } from 'react';
+import { Navbar, NavbarBrand} from 'reactstrap';
 import styled from 'styled-components';
 import Logo from '../../assets/Header.png';
 
 const NavBar: React.FC = () => {
-  
+  const loginModalTrigger = useState<boolean>(false)
+
   return (
     <>
       <Nav height={'2rem'} backgroundColor={'black'} justifyContent={'flex-end'}>
@@ -12,6 +13,7 @@ const NavBar: React.FC = () => {
       </Nav>
       <Nav dark>
         <Brand href={'/'}> <PSLogo  src={Logo}/> </Brand>
+        <Button> Sign In </Button>
       </Nav>
     </>
   );
@@ -24,6 +26,18 @@ const Sony = styled.a`
   padding: .5rem;
   font-family: Georgia, serif;
   font-weight: bold;
+`
+
+const Button = styled.button`
+  align-self: center;
+  color: white;
+  background: black;
+  height: 3rem;
+  width: 6rem;
+  margin: 1.5rem;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 1rem;
 `
 
 const Brand = styled(NavbarBrand)`

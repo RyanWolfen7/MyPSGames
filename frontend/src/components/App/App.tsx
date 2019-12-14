@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import NavBar from '../NavBar/NavBar';
 
-
 const App: React.FC = ({ children }) => {
   return (
     <>
