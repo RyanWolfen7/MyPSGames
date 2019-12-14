@@ -16,4 +16,5 @@ const App: React.FC = ({ children }) => {
 export default App;
 
 const Wrapper = styled.div`
+  background: #003791;
 `;

@@ -2,18 +2,27 @@ import React, { useState } from 'react';
 import { Navbar, NavbarBrand} from 'reactstrap';
 import styled from 'styled-components';
 import Logo from '../../assets/Header.png';
+import AddGameModal from '../AddGameModal/AddGameModal'
 
 const NavBar: React.FC = () => {
-  const loginModalTrigger = useState<boolean>(false)
+  const [addGameModal, setAddGameModal] = useState<boolean>(false)
+
+  const toggleModal = () => { 
+    setAddGameModal(!addGameModal)
+  };
 
   return (
     <>
       <Nav height={'2rem'} backgroundColor={'black'} justifyContent={'flex-end'}>
         <Brand href={'https://www.sony.com/'}> <Sony> Sony </Sony> </Brand>
       </Nav>
-      <Nav dark>
+      <Nav>
         <Brand href={'/'}> <PSLogo  src={Logo}/> </Brand>
-        <Button> Sign In </Button>
+        <Button> Add Game </Button>
+        <AddGameModal
+          isOpen={addGameModal}
+          toggle={toggleModal}
+        />
       </Nav>
     </>
   );
@@ -33,7 +42,7 @@ const Button = styled.button`
   color: white;
   background: black;
   height: 3rem;
-  width: 6rem;
+  width: 8rem;
   margin: 1.5rem;
   font-family: Georgia, serif;
   font-weight: bold;
