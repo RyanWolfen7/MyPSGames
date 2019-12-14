@@ -1,6 +1,7 @@
 import React from 'react';
-import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents'
-import { AddGameModelInterface} from '../../interfaces/AddGameModelInterface';
+import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents';
+import { AddGameModelInterface } from '../../interfaces/AddGameModelInterface';
+import AddGameFields from './AddGameFields'
 
 const AddGameModel: React.FC<AddGameModelInterface> = props => {
   const {
@@ -14,7 +15,7 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
         Add Your Playstation Game Here
       </Header>
       <Body>
-sfasfs
+        <AddGameFields/>
       </Body>
       <Footer>
           <Button backgroundColor={'white'} color={'black'}> 
