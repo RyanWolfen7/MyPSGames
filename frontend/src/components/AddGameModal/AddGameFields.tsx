@@ -1,5 +1,5 @@
-import React, {} from 'react';
-import { Col} from 'reactstrap';
+import React from 'react';
+import { Col } from 'reactstrap';
 import { StyledForm, Group, FieldInput, FieldLabel, Container } from '../../styles/styledComponents'
 import { AddGameFieldInterface, AddGameInputSchemaInterface, Schema } from '../../interfaces/AddGameModelInterface'
 import { FieldSchema, PlatformSchema } from './AddGameInputSchema'

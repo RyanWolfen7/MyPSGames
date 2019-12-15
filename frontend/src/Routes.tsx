@@ -10,6 +10,10 @@ export default () => {
         exact
         path={'/'}
       />
+      <Route
+        exact
+        path={'/game/:id'}
+      />
     </Switch>
   )
 }

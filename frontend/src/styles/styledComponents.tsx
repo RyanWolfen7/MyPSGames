@@ -8,7 +8,8 @@ import {
   Form,
   FormGroup,
   Input,
-  Label
+  Label,
+  Fade
 } from 'reactstrap';
 import styled from 'styled-components';
 
@@ -123,3 +124,16 @@ padding: 1rem;
   color: #fff;
   font-weight: 300;
 `;
+
+export const FadeWrapper = styled(Fade)`
+  height: 100%;
+  align-self: center
+  color: white;
+`
+
+export const GamesListContainer = styled.div`
+  padding: 2rem;
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+`

@@ -37,13 +37,19 @@ export interface Platforms {
   psv: Boolean
 }
 
-export interface DataResponse {
-  
+export interface GamesInLibrary {
+  genre: string
+  name: string
+  platforms: Platforms
+  players: number
+  releaseDate: string
+  _v: number
+  _id: string
 }
 
 export default interface AddGameInterface {
   isLoading: boolean,
-  data: DataResponse,
+  data: GamesInLibrary[],
   error: Error | null
 }
 

@@ -3,11 +3,11 @@ import {
   GET_GAME_LIST, GET_GAME_LIST_SUCCESS, GET_GAME_LIST_FAILURE
 } from '../types'
 import { AnyAction } from 'redux';
-import AddGameInterface, { DataResponse } from '../interfaces/AddGameModelInterface'
+import AddGameInterface, { GamesInLibrary } from '../interfaces/AddGameModelInterface'
 
 const initialState: AddGameInterface = {
   isLoading: false,
-  data: {} as DataResponse,
+  data: [] as GamesInLibrary[],
   error: null
 }
 
@@ -36,10 +36,11 @@ export default (state = initialState, action: AnyAction) => {
         isLoading: true,
       }
     case GET_GAME_LIST_SUCCESS:
+        console.log('thunk', action.payload.data)
       return {
         ...state,
         data: action.payload.data,
-        isLoading: false,
+        isLoading: false
       }
     case GET_GAME_LIST_FAILURE:
       return {
