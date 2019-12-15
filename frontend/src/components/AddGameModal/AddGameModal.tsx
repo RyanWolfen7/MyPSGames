@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
 import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents';
 import { AddGameModelInterface, GameInfo } from '../../interfaces/AddGameModelInterface';
 import AddGameFields from './AddGameFields'
+import actions from '../../actions'
 
 const AddGameModel: React.FC<AddGameModelInterface> = props => {
   const {
     isOpen,
     toggle
   } = props
+  const dispatch = useDispatch()
   
   const [ gameInfo, setGameInfo ] = useState<GameInfo>( { 
     name: '', 
@@ -18,11 +21,14 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
     platforms: { ps1: false, ps2: false, ps3: false, ps4: false, psp: false, psv: false}
   })
 
+  useEffect(() => {
+
+  },[])
+
   const updateGameInfo = ( game: Object) => {
     setGameInfo({...gameInfo, ...game})
   }
 
-  console.log(gameInfo)
   return (
     <MainModal isOpen={isOpen} toggle={() => toggle()}>
       <Header>

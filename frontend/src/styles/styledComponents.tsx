@@ -90,6 +90,7 @@ export const Group = styled(FormGroup)`
   padding: 2.3rem;
   background: black;
   color: white;
+  border-radius: .3rem
 `
 
 export const FieldInput = styled(Input)`
