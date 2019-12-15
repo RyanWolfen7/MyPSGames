@@ -150,3 +150,30 @@ export const GameCard = styled(Card)`
   justify-content: center;
   text-align: center;
 `
+
+export const GameDetailsCard = styled(Card)`
+  background: black;
+  padding: 1.4rem;
+  margin: 3rem;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 80%;
+  border-radius: .3rem
+  display: grid;
+  grid-template-columns: repeat(2, [col] 20rem) ;
+  grid-template-rows: repeat(2, [row] auto  ); 
+  grid-gap: .1rem; 
+` 
+
+export const GameDetailCell = styled.div`
+  background: white;
+  color: black;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: solid black .1rem;
+  border-radius: .3rem
+  padding: .3rem;
+  margin: .1rem;
+`

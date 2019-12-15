@@ -1,11 +1,11 @@
 import { 
   ADD_GAME, ADD_GAME_SUCCESS, ADD_GAME_FAILURE,
-  GET_GAME_LIST, GET_GAME_LIST_SUCCESS, GET_GAME_LIST_FAILURE
+  GET_GAME_LIST, GET_GAME_LIST_SUCCESS, GET_GAME_LIST_FAILURE,
+  GET_GAME, GET_GAME_SUCCESS, GET_GAME_FAILURE
 } from '../types'
 import { GameInfo } from '../interfaces/AddGameModelInterface'
 
 const addGame = ( game: Object ) => {
-  console.log((game))
   return ({
     types: [ADD_GAME, ADD_GAME_SUCCESS, ADD_GAME_FAILURE],
     payload: {
@@ -30,7 +30,20 @@ const getGameList = () => {
   })
 }
 
+const getGame = ( id: string) => {
+  return ({
+    types: [GET_GAME, GET_GAME_SUCCESS, GET_GAME_FAILURE],
+    payload: {
+      request: {
+        url: `/game/${id}`,
+        method: 'GET',
+      }
+    }
+  })
+}
+
 export default {
   addGame,
-  getGameList
+  getGameList,
+  getGame
 };

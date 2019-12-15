@@ -1,6 +1,7 @@
 import { 
   ADD_GAME, ADD_GAME_SUCCESS, ADD_GAME_FAILURE, 
-  GET_GAME_LIST, GET_GAME_LIST_SUCCESS, GET_GAME_LIST_FAILURE
+  GET_GAME_LIST, GET_GAME_LIST_SUCCESS, GET_GAME_LIST_FAILURE,
+  GET_GAME, GET_GAME_SUCCESS, GET_GAME_FAILURE
 } from '../types'
 import { AnyAction } from 'redux';
 import AddGameInterface, { GamesInLibrary } from '../interfaces/AddGameModelInterface'
@@ -36,13 +37,30 @@ export default (state = initialState, action: AnyAction) => {
         isLoading: true,
       }
     case GET_GAME_LIST_SUCCESS:
-        console.log('thunk', action.payload.data)
       return {
         ...state,
         data: action.payload.data,
         isLoading: false
       }
     case GET_GAME_LIST_FAILURE:
+      return {
+        ...state,
+        error: action.error.response.data,
+        isLoading: false,
+      }
+    case GET_GAME:
+      return {
+        ...state,
+        isLoading: true,
+      }
+    case GET_GAME_SUCCESS:
+        console.log('thunk', action.payload.data)
+      return {
+        ...state,
+        data: action.payload.data,
+        isLoading: false
+      }
+    case GET_GAME_FAILURE:
       return {
         ...state,
         error: action.error.response.data,

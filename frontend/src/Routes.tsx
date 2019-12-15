@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GamesList from './components/GamesList/GamesList';
+import GameDetails from './components/GameDetails/GameDetails';
 
 export default () => {
   return (
@@ -11,8 +12,9 @@ export default () => {
         path={'/'}
       />
       <Route
+        component={GameDetails}
         exact
-        path={'/game/:id'}
+        path={'/:gameName/:id'}
       />
     </Switch>
   )

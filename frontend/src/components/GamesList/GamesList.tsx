@@ -18,10 +18,9 @@ const GamesList: React.FC<GamesListInterface> = props => {
     dispatch(actions.gamesLibrary.getGameList())
   }, [])
 
-  console.log(data.map(x => x))
   const displayGames = () => {
     return data.map( (game: GamesInLibrary) => 
-    <GameCard onClick={() => props.history.push(`/game/${game._id}`)}>
+    <GameCard onClick={() => props.history.push(`/${game.name}/${game._id}`)}>
       <CardBody>
         <CardTitle> {game.name} </CardTitle>
         <CardImg src={Logo} width="100%" alt={game.name}/>
