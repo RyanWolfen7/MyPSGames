@@ -15,6 +15,17 @@ router.get('/gamesList', async (req, res) => {
   }
 })
 
+router.get('/game/:id', async (req, res) => {
+  const { id } = req.params  
+  try {
+    await Game.findById( id, (error, data) => {
+      error ? res.status(400).json({error}) : res.status(200).json(data)     
+    })
+  } catch (error) {
+    res.status(400).json({ message: error.message })
+  }
+})
+
 router.post('/addGame', async (req, res) => {
   const { name, genre, releaseDate, players, platforms } = req.body
   const game = new Game({
