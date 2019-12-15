@@ -10,7 +10,6 @@ const addGame = ( game: GameInfo ) => {
       request: {
         url: `/addGame`,
         method: 'POST',
-        headers: {},
         data: game
       }
     }
