@@ -22,11 +22,15 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
   })
 
   useEffect(() => {
-
+    
   },[])
 
   const updateGameInfo = ( game: Object) => {
     setGameInfo({...gameInfo, ...game})
+  }
+
+  const addGameToLibrary = () => {
+    dispatch(actions.gamesLibrary.addGame(gameInfo))
   }
 
   return (
@@ -38,7 +42,7 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
         <AddGameFields platforms={gameInfo.platforms} updateGameInfo={updateGameInfo}/>
       </Body>
       <Footer>
-          <Button backgroundColor={'white'} color={'black'} height={'2rem'}> 
+          <Button onClick={() => addGameToLibrary()} backgroundColor={'white'} color={'black'} height={'2rem'}> 
             Save
           </Button>
           <Button onClick={toggle} height={'2rem'}>
