@@ -9,7 +9,8 @@ import {
   FormGroup,
   Input,
   Label,
-  Fade
+  Fade,
+  Card
 } from 'reactstrap';
 import styled from 'styled-components';
 
@@ -118,22 +119,34 @@ export const MainContainer = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.span`
+export const Title = styled.div`
 padding: 1rem;
   font-size: 45px;
   color: #fff;
   font-weight: 300;
+  display: flex;
+  justify-content: center;
 `;
 
 export const FadeWrapper = styled(Fade)`
   height: 100%;
-  align-self: center
   color: white;
 `
 
 export const GamesListContainer = styled.div`
   padding: 2rem;
-  margin: 5rem;
+  margin: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: auto;
+`
+
+export const GameCard = styled(Card)`
+  background: white;
+  color: black;
+  padding: 1.4rem;
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `
