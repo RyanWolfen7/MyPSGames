@@ -18,10 +18,10 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
         <AddGameFields/>
       </Body>
       <Footer>
-          <Button backgroundColor={'white'} color={'black'}> 
+          <Button backgroundColor={'white'} color={'black'} height={'2rem'}> 
             Save
           </Button>
-          <Button onClick={toggle}>
+          <Button onClick={toggle} height={'2rem'}>
             Cancel
           </Button>
       </Footer>

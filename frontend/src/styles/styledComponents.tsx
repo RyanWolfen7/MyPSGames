@@ -4,7 +4,11 @@ import {
   Modal, 
   ModalHeader,
   ModalFooter,
-  ModalBody
+  ModalBody,
+  Form,
+  FormGroup,
+  Input,
+  Label
 } from 'reactstrap';
 import styled from 'styled-components';
 
@@ -23,7 +27,7 @@ export const Button: any = styled.button`
   align-self: center;
   color: ${ (props: any) => props.color ? props.color : 'white'};
   background: ${ (props: any) => props.backgroundColor ? props.backGroundColor : 'black'};
-  height: 3rem;
+  height: ${ (props: any) => props.height ? props.height : '3rem'};
   width: 8rem;
   margin: 1.5rem;
   font-family: Georgia, serif;
@@ -74,4 +78,30 @@ export const Body = styled(ModalBody)`
   justify-content: center;
   background: white;
   width: 100vw;
+`
+export const StyledForm = styled(Form)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+export const Group = styled(FormGroup)`
+  margin: 2.3rem;
+  padding: 2.3rem;
+  background: black;
+  color: white;
+`
+
+export const FieldInput = styled(Input)`
+  width: ${ ( props: any ) => props.thin ? '' : '100%'};
+`
+export const FieldLabel = styled(Label)`
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 1rem; 
+  margin: ${ (props: any) => props.thin ? '.5rem' : '.8rem 0 .8rem'}
+`
+
+export const Container = styled.div`
+  padding: 1rem 0 1rem;
 `
