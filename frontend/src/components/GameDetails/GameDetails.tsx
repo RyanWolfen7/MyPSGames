@@ -4,7 +4,7 @@ import { withRouter, RouteComponentProps } from 'react-router';
 import actions from '../../actions';
 import { MainContainer, GameDetailsCard, GameDetailCell } from '../../styles/styledComponents';
 import AddGameInterface, { LooseObject } from '../../interfaces/AddGameModelInterface'
-import { getReadableDate } from '../helpers/gameDetails'
+import { getReadableDate } from '../../helpers/gameDetails'
 
 interface GamesListInterface extends RouteComponentProps<{ id: string, gameName: string }> { }
 
