@@ -8,7 +8,8 @@ import AddGameInterface, { GamesInLibrary } from '../interfaces/AddGameModelInte
 
 const initialState: AddGameInterface = {
   isLoading: false,
-  data: [] as GamesInLibrary[],
+  gamesList: [] as GamesInLibrary[],
+  game: {} as GamesInLibrary,
   error: null
 }
 
@@ -39,7 +40,7 @@ export default (state = initialState, action: AnyAction) => {
     case GET_GAME_LIST_SUCCESS:
       return {
         ...state,
-        data: action.payload.data,
+        gamesList: action.payload.data,
         isLoading: false
       }
     case GET_GAME_LIST_FAILURE:
@@ -54,10 +55,9 @@ export default (state = initialState, action: AnyAction) => {
         isLoading: true,
       }
     case GET_GAME_SUCCESS:
-        console.log('thunk', action.payload.data)
       return {
         ...state,
-        data: action.payload.data,
+        game: action.payload.data,
         isLoading: false
       }
     case GET_GAME_FAILURE:

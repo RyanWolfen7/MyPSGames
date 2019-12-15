@@ -3,24 +3,44 @@ import { useSelector, useDispatch } from 'react-redux';
 import { withRouter, RouteComponentProps } from 'react-router';
 import actions from '../../actions';
 import { MainContainer, GameDetailsCard, GameDetailCell } from '../../styles/styledComponents';
-import AddGameInterface from '../../interfaces/AddGameModelInterface'
+import AddGameInterface, { LooseObject } from '../../interfaces/AddGameModelInterface'
+import { getReadableDate } from '../helpers/gameDetails'
 
 interface GamesListInterface extends RouteComponentProps<{ id: string, gameName: string }> { }
 
 const GameDetails: React.FC<GamesListInterface> = props => {
-  const { isLoading, data, error} = useSelector((state: { gamesLibrary: AddGameInterface}) => state.gamesLibrary)
+  const { isLoading, game, error} = useSelector((state: { gamesLibrary: AddGameInterface}) => state.gamesLibrary)
   const dispatch = useDispatch()
-  console.log(props.match.params)
+  const date = getReadableDate(game.releaseDate)
 
   useEffect(() => {
     dispatch(actions.gamesLibrary.getGame(props.match.params.id))
   }, [])
+
+  const listPlatforms = () => {
+    let list = ''
+    if (game.platforms && game.platforms.ps1) { list = list + 'ps1 '} 
+    if (game.platforms && game.platforms.ps2) { list = list + 'ps2 '} 
+    if (game.platforms && game.platforms.ps3) { list = list + 'ps3 '} 
+    if (game.platforms && game.platforms.ps4) { list = list + 'ps4 '} 
+    if (game.platforms && game.platforms.psp) { list = list + 'psp '} 
+    if (game.platforms && game.platforms.psv) { list = list + 'psv '}
+    return list  
+  }
 
   return (
     <MainContainer>
       <GameDetailsCard>
         <GameDetailCell> Name: </GameDetailCell>
         <GameDetailCell> {props.match.params.gameName} </GameDetailCell>
+        <GameDetailCell> Genre: </GameDetailCell>
+        <GameDetailCell> {game.genre} </GameDetailCell>
+        <GameDetailCell> Number of Players: </GameDetailCell>
+        <GameDetailCell> {game.players} </GameDetailCell>
+        <GameDetailCell> Release Date: </GameDetailCell>
+        <GameDetailCell> {date} </GameDetailCell>
+        <GameDetailCell> Platforms: </GameDetailCell>
+        <GameDetailCell> {listPlatforms()} </GameDetailCell>
       </GameDetailsCard>
     </MainContainer>
   )

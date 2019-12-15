@@ -49,10 +49,11 @@ export interface GamesInLibrary {
 
 export default interface AddGameInterface {
   isLoading: boolean,
-  data: GamesInLibrary[],
+  gamesList: GamesInLibrary[],
+  game: GamesInLibrary
   error: Error | null
 }
 
 export interface LooseObject {
-  [key: string]: any
+  [key: string]: string
 }

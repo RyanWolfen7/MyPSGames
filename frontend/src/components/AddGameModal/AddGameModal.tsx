@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents';
-import { AddGameModelInterface, GameInfo, LooseObject } from '../../interfaces/AddGameModelInterface';
+import { AddGameModelInterface, GameInfo } from '../../interfaces/AddGameModelInterface';
 import AddGameFields from './AddGameFields'
 import actions from '../../actions'
 

@@ -11,7 +11,7 @@ import actions from '../../actions';
 interface GamesListInterface extends RouteComponentProps<{ id: string }> { }
 
 const GamesList: React.FC<GamesListInterface> = props => {
-  const { isLoading, data, error} = useSelector((state: { gamesLibrary: AddGameInterface}) => state.gamesLibrary)
+  const { isLoading, gamesList, error} = useSelector((state: { gamesLibrary: AddGameInterface}) => state.gamesLibrary)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const GamesList: React.FC<GamesListInterface> = props => {
   }, [])
 
   const displayGames = () => {
-    return data.map( (game: GamesInLibrary) => 
+    return gamesList.map( (game: GamesInLibrary) => 
     <GameCard onClick={() => props.history.push(`/${game.name}/${game._id}`)}>
       <CardBody>
         <CardTitle> {game.name} </CardTitle>
