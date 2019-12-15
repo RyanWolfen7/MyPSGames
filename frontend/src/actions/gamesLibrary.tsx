@@ -8,7 +8,7 @@ const addGame = ( game: GameInfo ) => {
     types: [ADD_GAME, ADD_GAME_SUCCESS, ADD_GAME_FAILURE],
     payload: {
       request: {
-        url: `http://localhost:5000`,
+        url: `/addGame`,
         method: 'POST',
         headers: {},
         data: game
