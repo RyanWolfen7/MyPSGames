@@ -31,6 +31,7 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
 
   const addGameToLibrary = () => {
     dispatch(actions.gamesLibrary.addGame(gameInfo))
+    toggle()
   }
 
   return (

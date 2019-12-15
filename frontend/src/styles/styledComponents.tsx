@@ -14,6 +14,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   background: #003791;
+  height: 100vh;
+  width: 100vw;
 `;
 
 export const Sony = styled.a`
@@ -107,3 +109,17 @@ export const FieldLabel = styled(Label)`
 export const Container = styled.div`
   padding: 1rem 0 1rem;
 `
+export const MainContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Title = styled.span`
+padding: 1rem;
+  font-size: 45px;
+  color: #fff;
+  font-weight: 300;
+`;
