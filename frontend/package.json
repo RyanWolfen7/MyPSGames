@@ -25,6 +25,7 @@
     "redux-axios-middleware": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",
+    "ts-transformer-keys": "^0.4.1",
     "typescript": "~3.7.2"
   },
   "scripts": {

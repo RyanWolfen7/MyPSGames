@@ -12,7 +12,7 @@ const AddGameFields: React.FC<AddGameFieldInterface> = props => {
   } = props
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    updateGameInfo({ [event.target.id]: event.target.value} )
+    updateGameInfo({ [event.target.id]: event.target.files ? event.target.files[0] : event.target.value} )
   }
 
   const onSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,13 +26,13 @@ const AddGameFields: React.FC<AddGameFieldInterface> = props => {
         return (
         <Container>
           <FieldLabel for={field} >{name}</FieldLabel>
-          <Col> <FieldInput key={iterator.toString() + field} type={type} name={field} id={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, name: string)=> onChange(event)}/> </Col>
+          <Col> <FieldInput key={iterator.toString() + field} type={type} name={field} id={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>)=> onChange(event)}/> </Col>
         </Container> )
         
       } else {
         return (
         <FieldLabel thin="true" check>
-          <FieldInput thin="true" key={iterator.toString() + field} type="checkbox" id={field} name={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, id: string )=> onSelect(event)}/>{' '}
+          <FieldInput thin="true" key={iterator.toString() + field} type="checkbox" id={field} name={field} onChange={ (event: React.ChangeEvent<HTMLInputElement> )=> onSelect(event)}/>{' '}
           {name}
         </FieldLabel>)
       }

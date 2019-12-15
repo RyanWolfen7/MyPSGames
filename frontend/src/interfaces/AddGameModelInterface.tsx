@@ -24,9 +24,9 @@ export interface GameInfo {
   genre: String
   releaseDate: Date
   players: Number
-  boxArt: ImageData | null
+  boxArt: ImageData | Blob
   platforms: Platforms
-}
+}['name', 'genre', 'releaseDate', 'players', 'boxArt', 'platforms']
 
 export interface Platforms {
   ps1: Boolean
@@ -45,4 +45,8 @@ export default interface AddGameInterface {
   isLoading: boolean,
   data: DataResponse,
   error: Error | null
+}
+
+export interface LooseObject {
+  [key: string]: any
 }

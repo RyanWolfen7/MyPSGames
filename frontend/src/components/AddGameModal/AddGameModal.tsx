@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { Header, MainModal, Footer, Body, Button } from '../../styles/styledComponents';
-import { AddGameModelInterface, GameInfo } from '../../interfaces/AddGameModelInterface';
+import { AddGameModelInterface, GameInfo, LooseObject } from '../../interfaces/AddGameModelInterface';
 import AddGameFields from './AddGameFields'
 import actions from '../../actions'
 
@@ -17,7 +17,7 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
     genre: '',
     releaseDate: new Date(),
     players: 0,
-    boxArt: null,
+    boxArt: new ImageData(1, 1),
     platforms: { ps1: false, ps2: false, ps3: false, ps4: false, psp: false, psv: false}
   })
 

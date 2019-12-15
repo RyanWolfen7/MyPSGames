@@ -6,7 +6,6 @@ import reducers from './reducers';
 
 declare var window: any;
 
-console.log(process.env.REACT_APP_API_URL)
 const client = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   responseType: 'json',
