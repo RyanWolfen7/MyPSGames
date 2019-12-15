@@ -10,6 +10,15 @@ export interface AddGameFieldInterface {
   platforms: Platforms
 }
 
+export interface AddGameInputSchemaInterface {
+  schema: Array<Schema>
+}
+
+export interface Schema {
+  name: String
+  field: String
+  type: String
+}
 export interface GameInfo {
   name: String
   genre: String
