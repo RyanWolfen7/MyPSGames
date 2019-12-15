@@ -1,20 +1,17 @@
-const express     = require('express');
-const MongoClient = require('mongodb').MongoClient;
-const bodyParser  = require('body-parser');
-const db          = require('./config/db');
+require('dotenv').config()
 
-const app   = express();
-const port  = 8000;
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
 
-app.use(bodyParser.urlencoded({ extended: true }));
-var cors = require('cors');
-app.use(cors())
+mongoose.connect(process.env.REACT_APP_MONGO, { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', (error) => console.error(error))
+db.once('open', () => console.log('connected to database'))
 
-MongoClient.connect(db.url, (err, database) => {
-  if (err) return console.log(err)
-  require('./routes')(app, database);
+app.use(express.json())
 
-  app.listen(port, () => {
-    console.log('We all live on port ' + port);
-  });
-})
+const indexRouts = require('./routes/index')
+app.use('/', indexRouts)
+
+app.listen(5000, () => console.log('We are live on port: 5000'))

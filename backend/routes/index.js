@@ -1,5 +1,13 @@
-const usersGames = require('./usersGames.js');
+const express = require('express')
+const router = express.Router()
 
-module.exports = function(app, db){
-  usersGames(app, db);
-};
+router.get('/', (req, res) => {
+  res.send('hello')
+})
+
+router.post('/addGame', (req, res) => {
+  console.log(req)
+  res.send({data: req})
+})
+
+module.exports = router
