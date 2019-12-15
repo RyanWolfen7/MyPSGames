@@ -36,3 +36,13 @@ export interface Platforms {
   psp: Boolean
   psv: Boolean
 }
+
+export interface DataResponse {
+  
+}
+
+export default interface AddGameInterface {
+  isLoading: boolean,
+  data: DataResponse,
+  error: Error | null
+}

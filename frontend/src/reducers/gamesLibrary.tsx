@@ -2,10 +2,11 @@ import {
   ADD_GAME, ADD_GAME_SUCCESS, ADD_GAME_FAILURE
 } from '../types'
 import { AnyAction } from 'redux';
+import AddGameInterface, { DataResponse } from '../interfaces/AddGameModelInterface'
 
-const initialState = {
-  isloading: false,
-  data: {},
+const initialState: AddGameInterface = {
+  isLoading: false,
+  data: {} as DataResponse,
   error: null
 }
 
