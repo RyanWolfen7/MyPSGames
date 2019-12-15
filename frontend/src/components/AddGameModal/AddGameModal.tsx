@@ -22,8 +22,6 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
     setGameInfo({...gameInfo, ...game})
   }
 
-  console.log(gameInfo)
-
   return (
     <MainModal isOpen={isOpen} toggle={() => toggle()}>
       <Header>

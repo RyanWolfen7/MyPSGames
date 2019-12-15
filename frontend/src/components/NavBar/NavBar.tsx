@@ -17,7 +17,7 @@ const NavBar: React.FC = () => {
       </Nav>
       <Nav>
         <Brand href={'/'}> <PSLogo  src={Logo}/> </Brand>
-        <Button onClick={toggleModal}> Add Game </Button>  
+        <Button onClick={toggleModal} disabled={addGameModal}> Add Game </Button>  
       </Nav>
       <AddGameModal
           isOpen={addGameModal}
