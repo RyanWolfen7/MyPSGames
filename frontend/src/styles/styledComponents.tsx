@@ -33,6 +33,7 @@ export const Button: any = styled.button`
   font-family: Georgia, serif;
   font-weight: bold;
   font-size: 1rem;
+  border-radius: .3rem
 `
 
 export const Brand = styled(NavbarBrand)`

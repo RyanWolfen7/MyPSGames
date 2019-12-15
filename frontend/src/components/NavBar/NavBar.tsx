@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
         <Brand href={'https://www.sony.com/'}> <Sony> Sony </Sony> </Brand>
       </Nav>
       <Nav>
-        <Brand href={'/'}> <PSLogo  src={Logo}/> </Brand>
+        <Brand href={'/'}> {<PSLogo  src={Logo}/>} </Brand>
         <Button onClick={toggleModal} disabled={addGameModal}> Add Game </Button>  
       </Nav>
       <AddGameModal
