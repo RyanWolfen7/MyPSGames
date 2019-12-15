@@ -19,7 +19,7 @@ const gameSchema = new mongoose.Schema({
     required: true
   },
   boxArt: {
-    type: String,
+    type: Object || null,
     required: true
   },
   platforms: {
