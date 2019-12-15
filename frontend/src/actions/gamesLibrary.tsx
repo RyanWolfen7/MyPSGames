@@ -10,7 +10,8 @@ const addGame = ( game: GameInfo ) => {
       request: {
         url: `http://localhost:5000`,
         method: 'POST',
-        headers: {}
+        headers: {},
+        data: game
       }
     }
   });

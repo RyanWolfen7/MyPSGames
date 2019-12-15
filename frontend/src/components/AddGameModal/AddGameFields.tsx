@@ -20,19 +20,19 @@ const AddGameFields: React.FC<AddGameFieldInterface> = props => {
   }
 
   const createMainFields = (inputSchema: AddGameInputSchemaInterface) => {
-    return inputSchema.schema.map( (fields: Schema) => {
+    return inputSchema.schema.map( (fields: Schema, iterator: Number) => {
       const { name, field, type } = fields
       if (type !== 'checkbox') {
         return (
         <Container>
           <FieldLabel for={field} >{name}</FieldLabel>
-          <Col> <FieldInput type={type} name={field} id={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, name: string)=> onChange(event)}/> </Col>
+          <Col> <FieldInput key={iterator.toString() + field} type={type} name={field} id={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, name: string)=> onChange(event)}/> </Col>
         </Container> )
         
       } else {
         return (
-        <FieldLabel thin check>
-          <FieldInput thin type="checkbox" id={field} name={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, id: string )=> onSelect(event)}/>{' '}
+        <FieldLabel thin="true" check>
+          <FieldInput thin="true" key={iterator.toString() + field} type="checkbox" id={field} name={field} onChange={ (event: React.ChangeEvent<HTMLInputElement>, id: string )=> onSelect(event)}/>{' '}
           {name}
         </FieldLabel>)
       }
