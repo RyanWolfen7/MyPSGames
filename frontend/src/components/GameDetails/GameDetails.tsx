@@ -39,8 +39,12 @@ const GameDetails: React.FC<GamesListInterface> = props => {
         <GameDetailCell> {game.players} </GameDetailCell>
         <GameDetailCell> Release Date: </GameDetailCell>
         <GameDetailCell> {date} </GameDetailCell>
+        <GameDetailCell> Publisher: </GameDetailCell>
+        <GameDetailCell> {game.publisher} </GameDetailCell>
         <GameDetailCell> Platforms: </GameDetailCell>
         <GameDetailCell> {listPlatforms()} </GameDetailCell>
+        <GameDetailCell> Box Art: </GameDetailCell>
+        <GameDetailCell> <img src={game.boxArt} /> </GameDetailCell>
       </GameDetailsCard>
     </MainContainer>
   )

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter, RouteComponentProps } from 'react-router';
-import { FadeWrapper , MainContainer, Title, GamesListContainer, GameCard, PSLogo } from '../../styles/styledComponents'
-import { CardTitle, CardImg, CardBody } from 'reactstrap'
+import { GameTitle, CardImage, CardWrapper , FadeWrapper , MainContainer, Title, GamesListContainer, GameCard, PSLogo } from '../../styles/styledComponents'
 import Logo from '../../assets/Header.png';
 import { Spinner } from 'reactstrap';
 import AddGameInterface, { GamesInLibrary } from '../../interfaces/AddGameModelInterface'
@@ -21,10 +20,10 @@ const GamesList: React.FC<GamesListInterface> = props => {
   const displayGames = () => {
     return gamesList.map( (game: GamesInLibrary) => 
     <GameCard onClick={() => props.history.push(`/${game.name}/${game._id}`)}>
-      <CardBody>
-        <CardTitle> {game.name} </CardTitle>
-        <CardImg src={Logo} width="100%" alt={game.name}/>
-      </CardBody>
+      <CardWrapper>
+        <GameTitle> {game.name} </GameTitle>
+        <CardImage src={game.boxArt} width="100%" alt={game.name}/>
+      </CardWrapper>
     </GameCard>)
   }
 

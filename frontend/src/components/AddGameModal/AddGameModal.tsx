@@ -17,20 +17,18 @@ const AddGameModel: React.FC<AddGameModelInterface> = props => {
     genre: '',
     releaseDate: new Date(),
     players: 0,
-    boxArt: new ImageData(1, 1),
+    publisher: '',
+    boxArt: '',
     platforms: { ps1: false, ps2: false, ps3: false, ps4: false, psp: false, psv: false}
   })
-
-  useEffect(() => {
-    
-  },[])
 
   const updateGameInfo = ( game: Object) => {
     setGameInfo({...gameInfo, ...game})
   }
 
-  const addGameToLibrary = () => {
-    dispatch(actions.gamesLibrary.addGame(gameInfo))
+  const addGameToLibrary = async () => {
+    await dispatch(actions.gamesLibrary.addGame(gameInfo))
+    window.location.reload(true)
     toggle()
   }
 

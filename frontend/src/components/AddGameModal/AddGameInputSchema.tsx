@@ -24,12 +24,7 @@ export const FieldSchema = { schema: [
     name: 'Publisher',
     field: 'publisher',
     type: 'text'
-  } ,
-  {
-    name: 'Box Art',
-    field: 'boxArt',
-    type: 'file'
-  } 
+  }  
 ]}
 
 export const PlatformSchema = {schema: [

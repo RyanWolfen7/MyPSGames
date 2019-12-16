@@ -10,7 +10,9 @@ import {
   Input,
   Label,
   Fade,
-  Card
+  Card,
+  CardImg,
+  CardBody
 } from 'reactstrap';
 import styled from 'styled-components';
 
@@ -116,7 +118,7 @@ export const MainContainer = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const Title = styled.div`
@@ -134,10 +136,12 @@ export const FadeWrapper = styled(Fade)`
 `
 
 export const GamesListContainer = styled.div`
-  padding: 2rem;
-  margin: 2rem;
-  display: flex;
-  flex-direction: row;
+  padding: 0rem;
+  margin: 0rem;
+  display: grid;
+  grid-template-columns: repeat(4, [col] auto) ;
+  grid-template-rows: repeat(auto, [row] auto  ); 
+  grid-gap: .1rem; 
   width: auto;
 `
 
@@ -145,6 +149,7 @@ export const GameCard = styled(Card)`
   background: white;
   color: black;
   padding: 1.4rem;
+  border-radius: .3rem
   margin: 3rem;
   display: flex;
   justify-content: center;
@@ -154,11 +159,11 @@ export const GameCard = styled(Card)`
 export const GameDetailsCard = styled(Card)`
   background: black;
   padding: 1.4rem;
-  margin: 3rem;
+  margin: 3rem 15rem 0;
   justify-content: center;
   text-align: center;
   height: 100%;
-  width: 80%;
+  width: 100%;
   border-radius: .3rem
   display: grid;
   grid-template-columns: repeat(2, [col] 20rem) ;
@@ -174,6 +179,26 @@ export const GameDetailCell = styled.div`
   font-size: 1.5rem;
   border: solid black .1rem;
   border-radius: .3rem
-  padding: .3rem;
+  padding: .7rem;
   margin: .1rem;
+`
+export const CardImage = styled(CardImg)`
+  height: 90%;
+  width: 100%;
+  border-radius: .3rem
+`
+
+export const CardWrapper = styled(CardBody)`
+  height: 15rem;
+  width: 10rem;
+  justify-self: center;
+  border-radius: .3rem
+`
+export const GameTitle = styled(Title)`
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: .8rem;
+  margin: 0;
+  padding: 0 0 10px;;
+  color: black;
 `

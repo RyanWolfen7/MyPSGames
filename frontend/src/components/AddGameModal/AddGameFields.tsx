@@ -19,6 +19,16 @@ const AddGameFields: React.FC<AddGameFieldInterface> = props => {
     updateGameInfo({ platforms: { ...platforms,  [event.target.id]: event.target.value === 'on' } } )
   }
 
+  const addFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let file = (event.target.files || [])[0];
+    let reader = new FileReader();
+    reader.onloadend = function() {
+      console.log('RESULT', reader.result)
+      updateGameInfo({ boxArt: reader.result })
+    }
+    reader.readAsDataURL(file);
+  }
+
   const createMainFields = (inputSchema: AddGameInputSchemaInterface) => {
     return inputSchema.schema.map( (fields: Schema, iterator: Number) => {
       const { name, field, type } = fields
@@ -42,11 +52,15 @@ const AddGameFields: React.FC<AddGameFieldInterface> = props => {
   return (
     <StyledForm>
       <Group>
-        {createMainFields(FieldSchema)}    
+        {createMainFields(FieldSchema)} 
+        <Container>
+          <FieldLabel for={'boxArt'} > Box Art </FieldLabel>
+          <Col> <FieldInput key={'boxArt'}  type="file" id={'boxArt'} name={'boxArt'} onChange={ (event: React.ChangeEvent<HTMLInputElement> )=> addFile( event )} accept="image/x-png,image/gif,image/jpeg"/>{' '} </Col>
+        </Container>    
         <Container>      
-          <FieldLabel for="platforms" >Platforms</FieldLabel>
+          <FieldLabel for="platforms" >Platforms</FieldLabel> 
           <Col>
-            {createMainFields(PlatformSchema)}  
+            {createMainFields(PlatformSchema)}
           </Col>
         </Container>
       </Group>

@@ -1,4 +1,5 @@
 import { NullLiteral } from "@babel/types";
+import { Image } from "react-native";
 
 export interface AddGameModelInterface {
   isOpen: Boolean
@@ -24,7 +25,8 @@ export interface GameInfo {
   genre: String
   releaseDate: Date
   players: Number
-  boxArt: ImageData | Blob
+  boxArt: String
+  publisher: String
   platforms: Platforms
 }['name', 'genre', 'releaseDate', 'players', 'boxArt', 'platforms']
 
@@ -42,6 +44,8 @@ export interface GamesInLibrary {
   name: string
   platforms: Platforms
   players: number
+  boxArt: string
+  publisher: string
   releaseDate: string
   _v: number
   _id: string
