@@ -18,6 +18,10 @@ const gameSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  publisher: {
+    type: String,
+    required: true
+  },
   boxArt: {
     type: String || null,
     required: true

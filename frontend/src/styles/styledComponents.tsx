@@ -18,8 +18,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   background: #003791;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Sony = styled.a`
@@ -143,6 +143,7 @@ export const GamesListContainer = styled.div`
   grid-template-rows: repeat(auto, [row] auto  ); 
   grid-gap: .1rem; 
   width: auto;
+  background: 
 `
 
 export const GameCard = styled(Card)`

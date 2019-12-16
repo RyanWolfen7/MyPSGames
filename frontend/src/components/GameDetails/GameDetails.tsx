@@ -27,6 +27,7 @@ const GameDetails: React.FC<GamesListInterface> = props => {
     if (game.platforms && game.platforms.psv) { list = list + 'psv '}
     return list  
   }
+  console.log(game)
 
   return (
     <MainContainer>
