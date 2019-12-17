@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter, RouteComponentProps } from 'react-router';
 import { GameTitle, CardImage, CardWrapper , FadeWrapper , MainContainer, Title, GamesListContainer, GameCard, PSLogo } from '../../styles/styledComponents'
-import Logo from '../../assets/Header.png';
 import { Spinner } from 'reactstrap';
 import AddGameInterface, { GamesInLibrary } from '../../interfaces/AddGameModelInterface'
 import actions from '../../actions';
